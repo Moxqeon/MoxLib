@@ -1,0 +1,4 @@
+name: MoxLib
+main: org.moxqeon.bungee.MoxBungee
+version: ${version}
+author: Moxqeon

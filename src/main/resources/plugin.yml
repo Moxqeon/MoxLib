@@ -1,0 +1,9 @@
+name: MoxLib
+main: org.moxqeon.bukkit.MoxBukkit
+api-version: 1.16
+version: ${version}
+author: Moxqeon
+depend:
+  - ProtocolLib
+softdepend:
+  - MythicMobs
