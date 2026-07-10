@@ -65,9 +65,6 @@ tasks {
     compileJava {
         options.encoding = "UTF-8"
     }
-//    shadowJar{
-//        relocate("de.tr7zw.nbtapi", "org.moxqeon.bukkit.api.nbt")
-//    }
 }
 
 publishing {
