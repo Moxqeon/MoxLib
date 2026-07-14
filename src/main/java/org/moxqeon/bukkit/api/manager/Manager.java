@@ -1,4 +1,4 @@
-package org.moxqeon.bukkit.api;
+package org.moxqeon.bukkit.api.manager;
 
 import org.bukkit.Keyed;
 import org.bukkit.NamespacedKey;
