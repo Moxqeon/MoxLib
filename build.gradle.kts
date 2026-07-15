@@ -5,7 +5,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("java-library")
     id("maven-publish")
-    kotlin("jvm") version "2.2.20"
+    kotlin("jvm") version "2.4.0"
 }
 
 group = "org.moxqeon"
