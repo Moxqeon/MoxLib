@@ -12,7 +12,11 @@ group = "org.moxqeon"
 version = "1.1.0"
 
 repositories {
-    mavenLocal()
+    mavenLocal() {
+        metadataSources {
+            artifact()   // 只要有 JAR 文件就行
+        }
+    }
     maven {
         name = "Aliyun"
         url = URI("https://maven.aliyun.com/repository/public")
@@ -37,14 +41,14 @@ repositories {
 }
 
 dependencies {
-    api("de.tr7zw:item-nbt-api-plugin:2.12.2")
+    api("de.tr7zw:item-nbt-api-plugin:2.10.0")
     api("org.moxqeon:MoxUtil:1.1.0")
     api("org.java-websocket:Java-WebSocket:1.5.7")
-    compileOnly("net.kyori:adventure-api:4.16.0")
-    compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
+//    compileOnly("com.destroystokyo.paper:paper:1.16.5-R0.1-SNAPSHOT")
     compileOnly(fileTree(mapOf("dir" to "../../BukkitLib", "include" to "*.jar")))
     compileOnly("net.md-5:bungeecord-api:1.20-R0.2")
-    compileOnly("com.comphenix.protocol:ProtocolLib:5.3.0")
+    compileOnly("com.github.retrooper:packetevents-spigot:2.13.0")
+    compileOnly("com.github.retrooper:packetevents-bungeecord:2.13.0")
     compileOnly("me.clip:placeholderapi:2.11.1")
     implementation("fr.mrmicky:fastboard:2.1.4")
     implementation(kotlin("stdlib-jdk8"))
@@ -75,5 +79,5 @@ publishing {
     }
 }
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(16)
 }

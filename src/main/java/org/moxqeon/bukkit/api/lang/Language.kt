@@ -1,10 +1,10 @@
 package org.moxqeon.bukkit.api.lang
 
 import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.plugin.Plugin
 import org.moxqeon.bukkit.MoxBukkit
 import org.moxqeon.bukkit.api.context.LanguageContext
-import org.moxqeon.bukkit.module.adventure.LegacyComponentSerializer
 import org.moxqeon.bukkit.util.write
 import org.moxqeon.util.FileUtil
 import org.yaml.snakeyaml.Yaml

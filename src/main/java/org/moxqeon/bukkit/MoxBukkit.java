@@ -1,6 +1,8 @@
 package org.moxqeon.bukkit;
 
+import com.github.retrooper.packetevents.PacketEvents;
 import com.google.common.base.Preconditions;
+import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
@@ -11,7 +13,6 @@ import org.moxqeon.bukkit.listener.ItemPickUpListener;
 import org.moxqeon.bukkit.listener.ScoreboardListener;
 import org.moxqeon.bukkit.module.damage.DamageManager;
 import org.moxqeon.bukkit.module.persistent.PersistentJsonTypeManager;
-import org.moxqeon.bukkit.module.protocol.Tester;
 import org.moxqeon.bukkit.module.scoreboard.ScoreboardManager;
 import org.moxqeon.platform.Platform;
 import org.moxqeon.platform.PlatformPluginAccessor;
@@ -28,7 +29,7 @@ public final class MoxBukkit extends JavaPlugin implements PlatformPluginAccesso
     public static MoxBukkit instance() {
         return Preconditions.checkNotNull(instance);
     }
-
+    @Override
     public void onEnable() {
         Preconditions.checkState(instance == null, "Plugin shouldn't be enabled multiple times");
         try {
@@ -45,7 +46,7 @@ public final class MoxBukkit extends JavaPlugin implements PlatformPluginAccesso
         Bukkit.getPluginManager().registerEvents(new ItemPickUpListener(this), this);
         Bukkit.getPluginManager().registerEvents(new ScoreboardListener(this), this);
         Bukkit.getPluginManager().registerEvents(new DamageManager(), this);
-        Tester.test();
+
     }
 
     public void onDisable() {

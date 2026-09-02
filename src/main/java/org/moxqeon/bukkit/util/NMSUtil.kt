@@ -1,11 +1,11 @@
 package org.moxqeon.bukkit.util
 
-import com.comphenix.protocol.utility.MinecraftVersion
+//import com.comphenix.protocol.utility.MinecraftVersion
 import org.bukkit.Bukkit
 
 object NMSUtil {
     @JvmField
-    val LEGACY: Boolean = !MinecraftVersion.CAVES_CLIFFS_1.atOrAbove()
+    val LEGACY: Boolean = true// !MinecraftVersion.CAVES_CLIFFS_1.atOrAbove()
     private val SERVER_CLASS_NAME: String = Bukkit.getServer().javaClass.getName()
 
     @JvmStatic
@@ -23,7 +23,7 @@ object NMSUtil {
 
     @JvmStatic
     fun nbtClass(className: String): Class<*> {
-        return if (MinecraftVersion.getCurrentVersion().isAtLeast(MinecraftVersion.CAVES_CLIFFS_1)) {
+        return if (!LEGACY) {
             Class.forName("net.minecraft.nbt.$className")
         } else {
             nmsClass(className)
