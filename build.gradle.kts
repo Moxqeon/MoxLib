@@ -44,7 +44,6 @@ dependencies {
     api("de.tr7zw:item-nbt-api-plugin:2.10.0")
     api("org.moxqeon:MoxUtil:1.1.0")
     api("org.java-websocket:Java-WebSocket:1.5.7")
-//    compileOnly("com.destroystokyo.paper:paper:1.16.5-R0.1-SNAPSHOT")
     compileOnly(fileTree(mapOf("dir" to "../../BukkitLib", "include" to "*.jar")))
     compileOnly("net.md-5:bungeecord-api:1.20-R0.2")
     compileOnly("com.github.retrooper:packetevents-spigot:2.13.0")

@@ -1,8 +1,6 @@
 package org.moxqeon.bukkit;
 
-import com.github.retrooper.packetevents.PacketEvents;
 import com.google.common.base.Preconditions;
-import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
