@@ -12,11 +12,7 @@ group = "org.moxqeon"
 version = "1.1.0"
 
 repositories {
-    mavenLocal() {
-        metadataSources {
-            artifact()   // 只要有 JAR 文件就行
-        }
-    }
+    mavenLocal()
     maven {
         name = "Aliyun"
         url = URI("https://maven.aliyun.com/repository/public")
@@ -50,6 +46,7 @@ dependencies {
     compileOnly("com.github.retrooper:packetevents-bungeecord:2.13.0")
     compileOnly("me.clip:placeholderapi:2.11.1")
     implementation("fr.mrmicky:fastboard:2.1.4")
+//    implementation("org.openjdk.nashorn:nashorn-core:15.4")
     implementation(kotlin("stdlib-jdk8"))
 }
 
@@ -78,5 +75,5 @@ publishing {
     }
 }
 kotlin {
-    jvmToolchain(16)
+    jvmToolchain(21)
 }
