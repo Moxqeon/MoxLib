@@ -20,35 +20,24 @@ public enum SlotType {
 
     @NotNull
     public EquipmentSlot toBukkit() {
-        switch (this) {
-            case MAINHAND:
-                return EquipmentSlot.HAND;
-            case OFFHAND:
-                return EquipmentSlot.OFF_HAND;
-            case HELMET:
-                return EquipmentSlot.HEAD;
-            case CHESTPLATE:
-                return EquipmentSlot.CHEST;
-            case LEGGINGS:
-                return EquipmentSlot.LEGS;
-            case BOOTS:
-                return EquipmentSlot.FEET;
-        }
-        throw new IllegalArgumentException();
+        return switch (this) {
+            case MAINHAND -> EquipmentSlot.HAND;
+            case OFFHAND -> EquipmentSlot.OFF_HAND;
+            case HELMET -> EquipmentSlot.HEAD;
+            case CHESTPLATE -> EquipmentSlot.CHEST;
+            case LEGGINGS -> EquipmentSlot.LEGS;
+            case BOOTS -> EquipmentSlot.FEET;
+        };
     }
 
-    @NotNull
-    public PlayerArmorChangeEvent.SlotType toPaper() {
-        switch (this) {
-            case HELMET:
-                return PlayerArmorChangeEvent.SlotType.HEAD;
-            case CHESTPLATE:
-                return PlayerArmorChangeEvent.SlotType.CHEST;
-            case LEGGINGS:
-                return PlayerArmorChangeEvent.SlotType.LEGS;
-            case BOOTS:
-                return PlayerArmorChangeEvent.SlotType.FEET;
-        }
-        throw new IllegalArgumentException();
-    }
+//    @NotNull
+//    public PlayerArmorChangeEvent.SlotType toPaper() {
+//        return switch (this) {
+//            case HELMET -> PlayerArmorChangeEvent.SlotType.HEAD;
+//            case CHESTPLATE -> PlayerArmorChangeEvent.SlotType.CHEST;
+//            case LEGGINGS -> PlayerArmorChangeEvent.SlotType.LEGS;
+//            case BOOTS -> PlayerArmorChangeEvent.SlotType.FEET;
+//            default -> throw new IllegalArgumentException();
+//        };
+//    }
 }
