@@ -1,6 +1,7 @@
 package org.moxqeon.bukkit.util
 
 import com.destroystokyo.paper.profile.CraftPlayerProfile
+import com.destroystokyo.paper.profile.PlayerProfile
 import com.destroystokyo.paper.profile.ProfileProperty
 import org.bukkit.inventory.meta.SkullMeta
 import java.nio.charset.StandardCharsets
