@@ -2,10 +2,10 @@ import java.net.URI
 
 plugins {
     id("java")
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.gradleup.shadow") version "8.3.11"
     id("java-library")
     id("maven-publish")
-    kotlin("jvm") version "2.4.0"
+    kotlin("jvm")
 }
 
 group = "org.moxqeon"
@@ -64,6 +64,11 @@ tasks {
     }
     compileJava {
         options.encoding = "UTF-8"
+    }
+    shadowJar{
+        relocate("com.github.retrooper", "org.moxqeon.libs.packetevents")
+        relocate("io.github.retrooper", "org.moxqeon.libs.packetevents")
+        relocate("com.google.gson", "my.domain.myplugin.libs.gson")
     }
 }
 
