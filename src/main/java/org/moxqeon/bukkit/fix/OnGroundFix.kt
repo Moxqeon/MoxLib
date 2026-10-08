@@ -28,9 +28,9 @@ class OnGroundFix(moxBukkit: MoxBukkit) : PacketListener {
     private val eventQueue = mutableListOf<PlayerLandEvent>()
 
     override fun onPacketReceive(event: PacketReceiveEvent) {
-        val user = event.user
-        val player = Bukkit.getPlayer(user.uuid)!!
         if (event.packetType == PacketType.Play.Client.PLAYER_POSITION || event.packetType == PacketType.Play.Client.PLAYER_POSITION_AND_ROTATION) {
+            val user = event.user
+            val player = Bukkit.getPlayer(user.uuid)!!
             val packet = WrapperPlayClientPlayerPosition(event)
             val onGround = packet.isOnGround
             val container = player.persistentDataContainer
