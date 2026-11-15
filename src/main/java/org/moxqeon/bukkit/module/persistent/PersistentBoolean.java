@@ -6,9 +6,10 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 布尔持久化数据类型。
- *
+ * <p>
  * 将布尔值以字节形式（0 / 1）存储。
  */
+@Deprecated(since = "MC1.19.4")
 public final class PersistentBoolean implements PersistentDataType<Byte, Boolean> {
     public static final PersistentBoolean INSTANCE = new PersistentBoolean();
 
