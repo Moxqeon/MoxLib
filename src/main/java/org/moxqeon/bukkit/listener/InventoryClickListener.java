@@ -14,6 +14,11 @@ import org.moxqeon.bukkit.MoxBukkit;
 
 import java.util.Objects;
 
+/**
+ * 背包点击监听器。
+ * <p>
+ * 在非 OP 玩家点击背包后异步刷新其背包。
+ */
 public final class InventoryClickListener implements Listener {
     private final MoxBukkit moxBukkit;
 

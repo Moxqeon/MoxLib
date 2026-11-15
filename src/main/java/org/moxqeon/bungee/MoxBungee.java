@@ -10,6 +10,11 @@ import org.moxqeon.platform.PlatformPluginAccessor;
 
 import java.util.Map;
 
+/**
+ * MoxLib 的 Bungee 平台插件主类。
+ * <p>
+ * 负责初始化 API 与桥接管理器，并提供各模块管理器的访问入口。
+ */
 public final class MoxBungee extends Plugin implements PlatformPluginAccessor<MoxLib> {
     private static MoxBungee instance;
     private MoxLib api;

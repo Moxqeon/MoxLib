@@ -6,10 +6,20 @@ import org.bukkit.block.Block
 import org.bukkit.block.BlockFace
 import org.bukkit.entity.Player
 
+/**
+ * 玩家相关工具类。
+ *
+ * 提供玩家头部位置、爬行状态判断、准星目标方块与目标面等辅助方法。
+ */
 object PlayerUtil {
     @JvmStatic
     fun headLocation(player: Player): Location {
-        return player.location.clone().add(0.0, 1.62, 0.0)
+        return player.location.clone().add(0.0, player.eyeHeight, 0.0)
+    }
+
+    @JvmStatic
+    fun isCrawling(player: Player): Boolean {
+        return player.eyeHeight == 0.4 && !(player.isSwimming || player.isGliding)
     }
 
     @JvmStatic

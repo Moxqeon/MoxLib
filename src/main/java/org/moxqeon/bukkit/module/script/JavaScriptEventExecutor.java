@@ -9,6 +9,11 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import org.moxqeon.module.script.JavaScriptFunction;
 
+/**
+ * JavaScript 事件执行器。
+ * <p>
+ * 将 Bukkit 事件转发给 JavaScript 函数处理。
+ */
 public final class JavaScriptEventExecutor implements EventExecutor {
     @NotNull
     private final JavaScriptFunction function;

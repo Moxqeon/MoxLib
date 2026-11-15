@@ -6,6 +6,11 @@ import org.bukkit.persistence.PersistentDataType
 import org.moxqeon.util.EncodeUtil
 import org.moxqeon.util.JsonUtil
 
+/**
+ * JsonObject 持久化数据类型。
+ *
+ * 将 [JsonObject] 以 Base64 编码的字符串形式进行存储。
+ */
 class PersistentJsonObject : PersistentDataType<String, JsonObject> {
     override fun getPrimitiveType(): Class<String> {
         return String::class.java

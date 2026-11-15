@@ -15,6 +15,11 @@ import org.moxqeon.bukkit.module.scoreboard.ScoreboardManager;
 import org.moxqeon.platform.Platform;
 import org.moxqeon.platform.PlatformPluginAccessor;
 
+/**
+ * MoxLib 的 Bukkit 平台插件主类。
+ * <p>
+ * 负责初始化各模块、注册事件监听器，并提供各模块管理器的访问入口。
+ */
 public final class MoxBukkit extends JavaPlugin implements PlatformPluginAccessor<MoxLib> {
     public static final String NAMESPACE = "moxlib";
     private static MoxBukkit instance;

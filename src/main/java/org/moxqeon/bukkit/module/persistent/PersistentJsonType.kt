@@ -6,6 +6,14 @@ import org.moxqeon.module.reflect.cast
 import org.moxqeon.util.EncodeUtil
 import org.moxqeon.util.JsonUtil
 
+/**
+ * 泛型 JSON 持久化数据类型基类。
+ *
+ * 将任意对象序列化为 JSON 后以 Base64 编码的字符串形式存储。
+ *
+ * @param manager 用于注册本类型的持久化类型管理器
+ * @param tClass 被持久化对象的类型
+ */
 abstract class PersistentJsonType<T> protected constructor(
     manager: PersistentJsonTypeManager, protected val tClass: Class<T>
 ) : PersistentDataType<String, T> {

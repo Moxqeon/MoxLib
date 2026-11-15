@@ -11,13 +11,18 @@ import io.lumine.mythic.bukkit.MythicBukkit
 import io.lumine.mythic.core.skills.MetaSkill
 import io.lumine.mythic.core.skills.SkillMetadataImpl
 import io.lumine.mythic.core.skills.SkillTriggers
-import org.bukkit.block.Campfire
 import org.bukkit.entity.Entity
 import org.bukkit.entity.Player
 import org.bukkit.persistence.PersistentDataType
 import org.bukkit.plugin.Plugin
 import org.moxqeon.bukkit.api.Constructor.namespacedKey
 
+/**
+ * MythicMobs 相关工具类。
+ *
+ * 提供神话生物类型判断、等级获取、技能冷却查询、技能释放
+ * 以及 MythicMob 配置读取等辅助方法。
+ */
 object MythicUtil {
 
     private const val NAMESPACE = "mythicmobs"

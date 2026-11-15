@@ -10,6 +10,11 @@ import org.moxqeon.MoxUtil;
 
 import java.net.URI;
 
+/**
+ * 简单 WebSocket 客户端抽象类。
+ * <p>
+ * 处理连接打开与 Ping 帧的 Pong 响应。
+ */
 public abstract class SimpleWebSocketClient extends WebSocketClient {
     public SimpleWebSocketClient(URI serverUri) {
         super(serverUri);

@@ -1,6 +1,5 @@
 package org.moxqeon
 
-import com.google.gson.internal.GsonBuildConfig
 import org.moxqeon.bukkit.MoxBukkit
 import org.moxqeon.bungee.MoxBungee
 import org.moxqeon.ext.createDir
@@ -13,6 +12,12 @@ import java.nio.charset.StandardCharsets
 import java.util.logging.Logger
 
 
+/**
+ * MoxLib 库的核心入口类。
+ *
+ * 在对应平台（Bukkit / Bungee）加载时进行初始化：创建数据目录与配置文件，
+ * 并根据当前平台获取对应的日志记录器。
+ */
 class MoxLib : PlatformPlugin {
     override val dataFolder: File
     override val logger: Logger

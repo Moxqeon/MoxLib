@@ -5,6 +5,11 @@ import org.bukkit.Bukkit
 import org.bukkit.inventory.PlayerInventory
 import org.moxqeon.util.EncodeUtil
 
+/**
+ * 背包工具类。
+ *
+ * 提供将玩家背包序列化为 [JsonObject] 的辅助方法。
+ */
 object InventoryUtil {
     @Suppress("DEPRECATION")
     private val unsafe = Bukkit.getUnsafe()

@@ -3,6 +3,11 @@ package org.moxqeon.bukkit.util
 //import com.comphenix.protocol.utility.MinecraftVersion
 import org.bukkit.Bukkit
 
+/**
+ * NMS 工具类。
+ *
+ * 通过反射获取 CraftBukkit（OBC）与 NMS 相关类，辅助跨版本兼容处理。
+ */
 object NMSUtil {
     @JvmField
     val LEGACY: Boolean = true// !MinecraftVersion.CAVES_CLIFFS_1.atOrAbove()

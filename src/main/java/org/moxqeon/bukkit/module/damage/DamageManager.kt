@@ -7,6 +7,11 @@ import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageEvent
 import org.moxqeon.MoxUtil
 
+/**
+ * 伤害管理器。
+ *
+ * 监听实体伤害事件，对低于阈值的极小伤害进行统一处理。
+ */
 class DamageManager: Listener {
     companion object {
         const val DAMAGE_THRESHOLD: Double = 0.000000000000000000000000000000000000000000001401298464324818

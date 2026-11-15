@@ -9,6 +9,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
+/**
+ * 简单代理引擎。
+ * <p>
+ * 用于从 YAML 文件导入类映射。
+ */
 public final class SimpleProxyEngine extends ProxyEngine {
     public void importClass(@NotNull File yamlFile) throws ClassNotFoundException {
         if (yamlFile.exists()) {

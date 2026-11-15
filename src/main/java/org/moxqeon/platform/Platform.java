@@ -2,6 +2,11 @@ package org.moxqeon.platform;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * 平台枚举。
+ * <p>
+ * 表示 MoxLib 当前运行的平台（Bukkit 或 Bungee）。
+ */
 public enum Platform {
     BUKKIT, BUNGEE;
 

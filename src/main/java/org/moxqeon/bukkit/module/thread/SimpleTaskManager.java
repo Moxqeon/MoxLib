@@ -7,6 +7,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.concurrent.*;
 
+/**
+ * 简单任务管理器。
+ * <p>
+ * 基于线程池管理异步任务，并提供等待任务完成的能力。
+ */
 public abstract class SimpleTaskManager {
     protected final ThreadPoolExecutor executor;
     protected final Set<Future<?>> futures = Sets.newConcurrentHashSet();

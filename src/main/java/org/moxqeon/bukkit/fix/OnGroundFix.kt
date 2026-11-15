@@ -12,6 +12,12 @@ import org.moxqeon.bukkit.api.Constructor
 import org.moxqeon.bukkit.event.PlayerLandEvent
 import org.moxqeon.bukkit.module.persistent.PersistentBoolean
 
+/**
+ * 玩家着地状态修复器。
+ *
+ * 监听客户端移动数据包以判断玩家是否处于地面，将状态写入持久化数据容器，
+ * 并按固定周期派发 [PlayerLandEvent] 玩家着地事件。
+ */
 class OnGroundFix(moxBukkit: MoxBukkit) : PacketListener {
     companion object {
         private val ON_GROUND_KEY = Constructor.namespacedKey("moxlib", "on_ground")

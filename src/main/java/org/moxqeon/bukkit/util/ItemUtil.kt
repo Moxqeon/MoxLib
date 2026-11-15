@@ -7,6 +7,11 @@ import org.moxqeon.bukkit.util.ItemUtil.editMeta
 import org.moxqeon.module.reflect.Reflect
 import java.util.function.Consumer
 
+/**
+ * 物品工具类。
+ *
+ * 提供药水类型判断与物品元数据编辑等辅助方法。
+ */
 object ItemUtil {
     @JvmStatic
     fun isPotion(material: Material) = material == Material.POTION || material == Material.SPLASH_POTION

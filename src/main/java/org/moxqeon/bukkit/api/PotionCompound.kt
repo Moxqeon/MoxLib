@@ -4,6 +4,12 @@ import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 import org.moxqeon.api.compound.ParsableCompound
 
+/**
+ * 药水效果复合数据。
+ *
+ * 用于在字符串与 [PotionEffect] 之间进行序列化与反序列化，
+ * 依次存储药水类型、持续时间、等级、是否环境以及是否显示粒子。
+ */
 class PotionCompound : ParsableCompound<PotionEffect> {
     constructor(potionEffect: PotionEffect) : super(
         potionEffect.type.name,

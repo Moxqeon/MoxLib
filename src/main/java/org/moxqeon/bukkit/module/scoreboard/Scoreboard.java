@@ -10,6 +10,11 @@ import org.moxqeon.bukkit.MoxBukkit;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 计分板封装类。
+ * <p>
+ * 基于 FastBoard 提供标题、行内容的设置以及显示 / 隐藏控制。
+ */
 public final class Scoreboard {
     private final MoxBukkit moxBukkit;
 

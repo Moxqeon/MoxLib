@@ -2,6 +2,11 @@ package org.moxqeon.bukkit.util
 
 import org.bukkit.event.block.Action
 
+/**
+ * 交互动作工具类。
+ *
+ * 提供对点击动作（左键 / 右键 / 方块 / 空中）的判断。
+ */
 object ActionUtil {
 
     @JvmStatic

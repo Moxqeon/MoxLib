@@ -6,6 +6,11 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * 玩家着地事件。
+ * <p>
+ * 携带玩家着地前后的位置信息。
+ */
 public final class PlayerLandEvent extends PlayerEvent {
     private static final HandlerList HANDLERS = new HandlerList();
 

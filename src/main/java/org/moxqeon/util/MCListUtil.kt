@@ -2,6 +2,11 @@ package org.moxqeon.util
 
 import net.kyori.adventure.text.TextComponent
 
+/**
+ * Minecraft 字符串列表工具类。
+ *
+ * 提供对字符串列表的格式化与原始文本转换。
+ */
 object MCListUtil {
     @JvmStatic
     fun toFormatted(strings: MutableList<String>): MutableList<String> {

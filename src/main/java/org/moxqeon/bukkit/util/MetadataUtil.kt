@@ -6,6 +6,11 @@ import org.bukkit.metadata.Metadatable
 import org.bukkit.plugin.Plugin
 import org.moxqeon.bukkit.MoxBukkit
 
+/**
+ * 元数据工具类。
+ *
+ * 提供按插件获取与设置实体元数据的辅助方法。
+ */
 object MetadataUtil {
     @JvmStatic
     fun metaGet(metadatable: Metadatable, plugin: Plugin, key: String): MetadataValue? {

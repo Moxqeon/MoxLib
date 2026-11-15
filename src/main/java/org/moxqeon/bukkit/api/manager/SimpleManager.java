@@ -7,6 +7,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 管理器简单实现。
+ * <p>
+ * 使用线程安全的 Map 作为注册表。
+ *
+ * @param <T> 管理对象的类型
+ */
 public abstract class SimpleManager<T extends Keyed> implements Manager<T> {
     protected Map<NamespacedKey, T> registry = new ConcurrentHashMap<>();
 

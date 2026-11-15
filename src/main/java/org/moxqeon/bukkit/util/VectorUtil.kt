@@ -5,6 +5,11 @@ import org.bukkit.util.Vector
 import org.moxqeon.util.MathUtil
 import kotlin.math.hypot
 
+/**
+ * 向量工具类。
+ *
+ * 提供由绝对速度 / 朝向、欧拉角以及数组构造向量的辅助方法。
+ */
 object VectorUtil {
     @JvmStatic
     fun fromAbs(abs: Double, yaw: Double, pitch: Double): Vector {

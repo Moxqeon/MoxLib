@@ -4,6 +4,11 @@ import org.bukkit.entity.Entity
 import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.util.Vector
 
+/**
+ * 实体工具类。
+ *
+ * 提供实体水平速度的获取与设置，以及伤害事件最终伤害的设置等辅助方法。
+ */
 object EntityUtil {
     @JvmStatic
     fun horizontalVelocity(entity: Entity): Vector {

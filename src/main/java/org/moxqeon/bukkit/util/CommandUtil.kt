@@ -4,6 +4,11 @@ import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 import org.moxqeon.bukkit.api.CommandSenderType
 
+/**
+ * 命令工具类。
+ *
+ * 根据命令执行者类型（玩家 / 控制台 / 临时 OP）执行命令。
+ */
 object CommandUtil {
     @JvmStatic
     fun runCommand(sender: CommandSender, command: String, senderType: CommandSenderType): Boolean {

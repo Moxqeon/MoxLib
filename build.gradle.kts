@@ -1,4 +1,6 @@
 import java.net.URI
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 
 plugins {
     id("java")
@@ -19,16 +21,8 @@ repositories {
     }
     mavenCentral()
     maven {
-        name = "PaperMC"
-        url = uri("https://repo.papermc.io/repository/maven-public/")
-    }
-    maven {
         name = "CodeMC"
         url = URI("https://repo.codemc.io/repository/maven-public/")
-    }
-    maven {
-        name = "DMulloy"
-        url = URI("https://repo.dmulloy2.net/repository/public/")
     }
     maven {
         name = "Minebench"
@@ -37,11 +31,17 @@ repositories {
 }
 
 dependencies {
-    api("de.tr7zw:item-nbt-api-plugin:2.10.0")
+    api("de.tr7zw:item-nbt-api-plugin:2.12.3")
     api("org.moxqeon:MoxUtil:1.1.0")
     api("org.java-websocket:Java-WebSocket:1.5.7")
-    compileOnly(fileTree(mapOf("dir" to "../../BukkitLib", "include" to "*.jar")))
-    compileOnly("net.md-5:bungeecord-api:1.20-R0.2")
+
+//    compileOnly(fileTree(mapOf("dir" to "../../BukkitLib", "include" to "*.jar")))
+    compileOnly("net.md-5:BungeeCord:2104")
+    compileOnly("io.papermc:paper-api:1.20.4")
+    compileOnly("io.papermc:paper-core:1.20.4")
+    compileOnly("io.lumine:MythicMobs:5.7.1")
+    compileOnly("net.kyori:adventure-api:4.13.1")
+    compileOnly("net.kyori:adventure-text-serializer-legacy:4.13.1")
     compileOnly("com.github.retrooper:packetevents-spigot:2.13.0")
     compileOnly("com.github.retrooper:packetevents-bungeecord:2.13.0")
     compileOnly("me.clip:placeholderapi:2.11.1")
@@ -65,10 +65,14 @@ tasks {
     compileJava {
         options.encoding = "UTF-8"
     }
-    shadowJar{
-        relocate("com.github.retrooper", "org.moxqeon.libs.packetevents")
-        relocate("io.github.retrooper", "org.moxqeon.libs.packetevents")
-        relocate("com.google.gson", "my.domain.myplugin.libs.gson")
+    shadowJar {
+        doLast {
+            val jarFile = this@shadowJar.archiveFile.get().asFile
+            val dir = File("C:\\Users\\Kciyamat\\Desktop\\Purpur\\plugins")
+            val dest = File(dir, "${jarFile.name}")
+            dir.mkdirs()
+            Files.copy(jarFile.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING)
+        }
     }
 }
 

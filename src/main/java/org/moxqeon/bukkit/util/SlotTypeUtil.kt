@@ -4,6 +4,11 @@ import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent
 import org.bukkit.inventory.EquipmentSlot
 import org.moxqeon.bukkit.api.SlotType
 
+/**
+ * 槽位类型工具类。
+ *
+ * 用于在 Bukkit 装备槽位与自定义 [SlotType] 之间进行转换。
+ */
 object SlotTypeUtil {
     @JvmStatic
     fun adapt(equipmentSlot: EquipmentSlot): SlotType {

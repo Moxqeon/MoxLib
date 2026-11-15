@@ -11,6 +11,11 @@ import java.io.IOException
 import java.nio.charset.Charset
 import java.util.*
 
+/**
+ * 插件工具类。
+ *
+ * 提供从插件资源写入文件以及构造命名空间键 / Adventure 键的辅助方法。
+ */
 object PluginUtil {
     @JvmStatic
     fun write(plugin: Plugin, resourcePath: String, file: File, charset: Charset): IOResult {

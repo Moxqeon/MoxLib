@@ -4,6 +4,11 @@ import org.bukkit.persistence.PersistentDataAdapterContext;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * 布尔持久化数据类型。
+ *
+ * 将布尔值以字节形式（0 / 1）存储。
+ */
 public final class PersistentBoolean implements PersistentDataType<Byte, Boolean> {
     public static final PersistentBoolean INSTANCE = new PersistentBoolean();
 

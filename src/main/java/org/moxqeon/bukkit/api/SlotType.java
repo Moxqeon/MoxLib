@@ -6,6 +6,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+/**
+ * 装备槽位类型枚举。
+ * <p>
+ * 表示主手、副手以及四件护甲槽位，并提供与 Bukkit 装备槽位的转换。
+ */
 public enum SlotType {
     MAINHAND, OFFHAND, HELMET, CHESTPLATE, LEGGINGS, BOOTS;
 

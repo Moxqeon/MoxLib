@@ -3,6 +3,11 @@ package org.moxqeon.bukkit.util
 import net.kyori.adventure.text.TextComponent
 import net.kyori.adventure.text.format.TextDecoration
 
+/**
+ * 组件工具类。
+ *
+ * 将文本组件转换为带颜色与装饰标记的字符串。
+ */
 object ComponentUtil {
     @JvmStatic
     fun asString(textComponent: TextComponent): String {

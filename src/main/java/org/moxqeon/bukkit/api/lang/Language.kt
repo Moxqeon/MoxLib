@@ -12,6 +12,12 @@ import java.io.FileInputStream
 import java.nio.charset.StandardCharsets
 import java.util.concurrent.ConcurrentHashMap
 
+/**
+ * 语言（本地化）管理器。
+ *
+ * 负责加载各插件的语言文件（lang.yml）、注册特殊文本组件转换器，
+ * 并将语言键本地化为 Adventure 文本组件。
+ */
 object Language {
     private val yaml = Yaml()
     private val rawLanguageMap: ConcurrentHashMap<Plugin, MutableMap<String, String>> = ConcurrentHashMap()

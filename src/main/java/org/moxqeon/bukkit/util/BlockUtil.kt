@@ -4,6 +4,11 @@ import org.bukkit.Location
 import org.bukkit.block.Block
 import org.bukkit.block.BlockFace
 
+/**
+ * 方块工具类。
+ *
+ * 提供方块中心点、表面中心点与位置字符串等辅助方法。
+ */
 object BlockUtil {
     @JvmStatic
     fun center(block: Block): Location {
@@ -75,4 +80,3 @@ fun Block.surfaceCenter(blockFace: BlockFace) = BlockUtil.surfaceCenter(this, bl
 
 @JvmSynthetic
 fun Block.locationString() = BlockUtil.locationString(this)
-

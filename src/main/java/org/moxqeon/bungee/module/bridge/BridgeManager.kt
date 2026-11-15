@@ -6,6 +6,11 @@ import org.moxqeon.util.JsonUtil
 import java.nio.charset.StandardCharsets
 import java.util.function.Consumer
 
+/**
+ * 桥接管理器。
+ *
+ * 用于处理 Bungee 插件消息，并将消息数据分发到已注册的处理器。
+ */
 class BridgeManager {
     private val handlerMap: MutableMap<String, Consumer<JsonObject>> = mutableMapOf()
 
@@ -20,6 +25,9 @@ class BridgeManager {
         handlerMap[handler] = consumer
     }
 
+    /**
+     * 桥接消息数据包，包含处理器标识与消息数据。
+     */
     class BridgePack {
         lateinit var handler: String
 

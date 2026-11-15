@@ -4,6 +4,11 @@ import org.jetbrains.annotations.NotNull;
 import org.moxqeon.api.Paramed;
 import org.moxqeon.module.script.JavaScriptFunction;
 
+/**
+ * JavaScript 可运行任务。
+ * <p>
+ * 在线程中执行 JavaScript 函数并携带参数。
+ */
 public final class JavaScriptRunnable extends Paramed implements Runnable {
     @NotNull
     private final JavaScriptFunction function;

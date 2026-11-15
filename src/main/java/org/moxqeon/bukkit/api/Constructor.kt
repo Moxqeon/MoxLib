@@ -4,6 +4,12 @@ import net.kyori.adventure.key.Key
 import org.bukkit.NamespacedKey
 import org.moxqeon.util.StringUtil
 
+/**
+ * 键构造工具类。
+ *
+ * 用于便捷地创建 Bukkit 的 [NamespacedKey] 与 Adventure 的 [Key]，
+ * 支持可选地将命名空间与键转换为蛇形命名。
+ */
 object Constructor {
     @JvmStatic
     fun namespacedKey(namespace: String, key: String, lenient: Boolean): NamespacedKey {

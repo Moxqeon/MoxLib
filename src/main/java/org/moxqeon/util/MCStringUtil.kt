@@ -4,6 +4,11 @@ import com.google.common.base.Preconditions
 import net.md_5.bungee.api.ChatColor
 import kotlin.math.pow
 
+/**
+ * Minecraft 字符串工具类。
+ *
+ * 提供字符图形宽度计算、颜色格式化、原始文本转换与字符偏移等辅助功能。
+ */
 object MCStringUtil {
 
     private val offsetMap = HashMap<Int?, String?>()
@@ -147,4 +152,3 @@ fun String.toRaw() = MCStringUtil.toRaw(this)
 fun String.toRaw(keepColorChar: Boolean) = MCStringUtil.toRaw(this, keepColorChar)
 fun String.applyOffset(offset: Int) = MCStringUtil.applyOffset(this, offset)
 fun String.graphicalWidth() = MCStringUtil.getStandardGraphicalWidth(this)
-

@@ -6,6 +6,11 @@ import java.util.*
 import java.util.concurrent.ConcurrentHashMap
 
 
+/**
+ * 计分板管理器。
+ *
+ * 维护玩家当前显示的计分板，并提供获取与创建计分板的方法。
+ */
 class ScoreboardManager(private val moxBukkit: MoxBukkit) {
     private val displayedScoreboards: MutableMap<UUID?, Scoreboard?> = ConcurrentHashMap<UUID?, Scoreboard?>()
 
