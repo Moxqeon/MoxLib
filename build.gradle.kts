@@ -82,6 +82,7 @@ tasks {
             Files.copy(jarFile.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING)
         }
     }
+
 }
 
 publishing {
@@ -96,6 +97,12 @@ kotlin {
 }
 
 dokka {
+    dokkaSourceSets.configureEach {
+        externalDocumentationLinks.register("MoxUtil") {
+            url = URI("https://moxqeon.github.io/MoxUtil/javadoc")
+            packageListUrl = URI("https://moxqeon.github.io/MoxUtil/javadoc/package-list")
+        }
+    }
     dokkaPublications {
         html {
             moduleName.set(project.name)
