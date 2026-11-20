@@ -1,7 +1,7 @@
 package org.moxqeon.bukkit.util
 
-import com.destroystokyo.paper.profile.CraftPlayerProfile
 import com.destroystokyo.paper.profile.ProfileProperty
+import org.bukkit.Bukkit
 import org.bukkit.inventory.meta.SkullMeta
 import java.nio.charset.StandardCharsets
 import java.util.*
@@ -18,7 +18,7 @@ object SkullUtil {
             .encodeToString("{\"textures\":{\"SKIN\":{\"url\":\"${url}\"}}}".toByteArray(StandardCharsets.UTF_8))
         val property = ProfileProperty("textures", base64)
         var playerProfile = skullMeta.playerProfile
-        if (playerProfile == null) playerProfile = CraftPlayerProfile(UUID.randomUUID(), "CraftProfile")
+        if (playerProfile == null) playerProfile = Bukkit.createProfile(UUID.randomUUID());
         else playerProfile.removeProperty("textures")
         playerProfile.setProperty(property)
         skullMeta.playerProfile = playerProfile
