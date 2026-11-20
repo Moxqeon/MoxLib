@@ -32,7 +32,9 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Generate Javadoc
-        run: ./gradlew javadoc          # 多模块聚合可用 ./gradlew aggregatedJavadoc 或 buildAggregatedJavadocs
+        run: |
+          chmod +x gradlew
+          ./gradlew javadoc          # 多模块聚合可用 ./gradlew aggregatedJavadoc 或 buildAggregatedJavadocs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
