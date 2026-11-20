@@ -34,7 +34,7 @@ jobs:
       - name: Generate Javadoc
         run: |
           chmod +x gradlew
-          ./gradlew javadoc
+          ./gradlew clean dokkaGenerate
 
       - name: Prepare subfolder
         run: |
