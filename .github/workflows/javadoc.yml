@@ -34,12 +34,17 @@ jobs:
       - name: Generate Javadoc
         run: |
           chmod +x gradlew
-          ./gradlew javadoc          # 多模块聚合可用 ./gradlew aggregatedJavadoc 或 buildAggregatedJavadocs
+          ./gradlew javadoc
+
+      - name: Prepare subfolder
+        run: |
+          mkdir -p site/javadoc
+          cp -r build/docs/javadoc/* site/javadoc/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build/docs/javadoc'
+          path: './site'
 
   deploy:
     needs: build
