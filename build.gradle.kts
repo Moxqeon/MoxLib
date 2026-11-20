@@ -3,11 +3,12 @@ import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 
 plugins {
-    id("java")
     id("com.gradleup.shadow") version "8.3.11"
     id("java-library")
     id("maven-publish")
     kotlin("jvm")
+    id("org.jetbrains.dokka") version "2.2.0"
+    id("org.jetbrains.dokka-javadoc") version "2.2.0"
 }
 
 group = "com.github.Moxqeon"
@@ -51,7 +52,6 @@ dependencies {
     compileOnly("com.github.retrooper:packetevents-bungeecord:2.13.0")
     compileOnly("me.clip:placeholderapi:2.11.1")
     implementation("fr.mrmicky:fastboard:2.1.4")
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks {
@@ -68,6 +68,10 @@ tasks {
     }
     compileJava {
         options.encoding = "UTF-8"
+    }
+    javadoc {
+        dependsOn("dokkaGenerateJavadoc")
+        enabled = false
     }
     shadowJar {
         doLast {
@@ -89,4 +93,19 @@ publishing {
 }
 kotlin {
     jvmToolchain(21)
+}
+
+dokka {
+    dokkaPublications {
+        html {
+            moduleName.set(project.name)
+            moduleVersion.set(project.version.toString())
+            outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
+        }
+        javadoc {
+            moduleName.set(project.name)
+            moduleVersion.set(project.version.toString())
+            outputDirectory.set(layout.buildDirectory.dir("docs/javadoc"))
+        }
+    }
 }
