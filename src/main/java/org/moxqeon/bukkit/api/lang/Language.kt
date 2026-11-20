@@ -1,7 +1,7 @@
 package org.moxqeon.bukkit.api.lang
 
 import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
+import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.plugin.Plugin
 import org.moxqeon.bukkit.api.context.LanguageContext
 import org.moxqeon.bukkit.util.write
@@ -59,7 +59,7 @@ object Language {
     @JvmStatic
     fun localize(plugin: Plugin, key: String, context: LanguageContext?): Component {
         if (!rawLanguageMap.containsKey(plugin)) return Component.text(key)
-        val component = LegacyComponentSerializer.legacyAmpersand().deserialize(rawLanguageMap[plugin]!![key]!!)
+        val component = MiniMessage.miniMessage().deserialize(rawLanguageMap[plugin]!![key]!!)
         if (!specialMap.containsKey(plugin)) return component
         return if (!specialMap[plugin]!!.containsKey(key)) {
             component
