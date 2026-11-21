@@ -108,7 +108,7 @@ dokka {
         }
         externalDocumentationLinks.register("kotlin-stdlib") {
         url = URI("https://kotlinlang.org/api/core/kotlin-stdlib/")
-        // 先不写 packageListUrl，让 Dokka 自动解析
+        packageListUrl = URI("https://kotlinlang.org/api/core/kotlin-stdlib/package-list")
         }
     }
     
