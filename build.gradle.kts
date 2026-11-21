@@ -102,15 +102,16 @@ dokka {
             url = URI("https://moxqeon.github.io/MoxUtil/javadoc")
             packageListUrl = URI("https://moxqeon.github.io/MoxUtil/javadoc/package-list")
         }
+        externalDocumentationLinks.register("java-se") {
+            url = URI("https://docs.oracle.com/en/java/javase/17/docs/api/")
+            packageListUrl = URI("https://docs.oracle.com/en/java/javase/17/docs/api/package-list")
+        }
+        externalDocumentationLinks.register("kotlin-stdlib") {
+        url = URI("https://kotlinlang.org/api/core/kotlin-stdlib/")
+        // 先不写 packageListUrl，让 Dokka 自动解析
+        }
     }
-    externalDocumentationLinks.register("java-se") {
-        url.set("https://docs.oracle.com/en/java/javase/17/docs/api/")
-        packageListUrl.set("https://docs.oracle.com/en/java/javase/17/docs/api/package-list")
-    }
-    externalDocumentationLinks.register("kotlin-stdlib") {
-    url.set("https://kotlinlang.org/api/core/kotlin-stdlib/")
-    // 先不写 packageListUrl，让 Dokka 自动解析
-    }
+    
     dokkaPublications {
         html {
             moduleName.set(project.name)
